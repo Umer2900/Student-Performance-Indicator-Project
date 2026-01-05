@@ -1,5 +1,11 @@
+setuptools
 pandas
 numpy
 seaborn
-setuptools
--e .
+matplotlib
+scikit-learn
+catboost
+xgboost
+Flask
+
+# -e .              # add this when you wanna install the package
