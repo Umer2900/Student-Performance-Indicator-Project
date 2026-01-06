@@ -6,7 +6,11 @@ matplotlib
 scikit-learn
 catboost
 xgboost
-Flask
 dill
+# Flask
+fastapi
+uvicorn
+jinja2
+python-multipart
 
 # -e .              # add this when you wanna install the package

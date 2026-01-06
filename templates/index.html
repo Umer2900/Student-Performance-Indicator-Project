@@ -123,6 +123,14 @@
             color: #c31432;
         }
 
+        .error {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 18px;
+            color: #c31432;
+            font-weight: 600;
+        }
+
         @media (max-width: 768px) {
             form {
                 grid-template-columns: 1fr;
@@ -137,67 +145,65 @@
 </head>
 
 <body>
-
 <div class="container">
-
     <!-- HEADER -->
     <div class="header">
         <h1>Student <span>Performance Indicator</span></h1>
         <p>AI-driven insights for academic success</p>
     </div>
 
-    <!-- FORM -->
-    <form method="post">
+    <!-- FORM - Important: action="/" added -->
+    <form method="post" action="/">
 
         <div class="form-group">
             <label>Gender</label>
             <select name="gender" required>
-                <option disabled selected value="">Select Gender</option>
-                <option value="male" {{ 'selected' if form_data and form_data.gender == 'male' }}>Male</option>
-                <option value="female" {{ 'selected' if form_data and form_data.gender == 'female' }}>Female</option>
+                <option disabled {{ '' if form_data else 'selected' }} value="">Select Gender</option>
+                <option value="male" {{ 'selected' if form_data and form_data.gender == 'male' else '' }}>Male</option>
+                <option value="female" {{ 'selected' if form_data and form_data.gender == 'female' else '' }}>Female</option>
             </select>
         </div>
 
         <div class="form-group">
             <label>Race / Ethnicity</label>
             <select name="race_ethnicity" required>
-                <option disabled selected value="">Select Ethnicity</option>
-                <option value="group A" {{ 'selected' if form_data and form_data.race_ethnicity == 'group A' }}>Group A</option>
-                <option value="group B" {{ 'selected' if form_data and form_data.race_ethnicity == 'group B' }}>Group B</option>
-                <option value="group C" {{ 'selected' if form_data and form_data.race_ethnicity == 'group C' }}>Group C</option>
-                <option value="group D" {{ 'selected' if form_data and form_data.race_ethnicity == 'group D' }}>Group D</option>
-                <option value="group E" {{ 'selected' if form_data and form_data.race_ethnicity == 'group E' }}>Group E</option>
+                <option disabled {{ '' if form_data else 'selected' }} value="">Select Ethnicity</option>
+                <option value="group A" {{ 'selected' if form_data and form_data.race_ethnicity == 'group A' else '' }}>Group A</option>
+                <option value="group B" {{ 'selected' if form_data and form_data.race_ethnicity == 'group B' else '' }}>Group B</option>
+                <option value="group C" {{ 'selected' if form_data and form_data.race_ethnicity == 'group C' else '' }}>Group C</option>
+                <option value="group D" {{ 'selected' if form_data and form_data.race_ethnicity == 'group D' else '' }}>Group D</option>
+                <option value="group E" {{ 'selected' if form_data and form_data.race_ethnicity == 'group E' else '' }}>Group E</option>
             </select>
         </div>
 
         <div class="form-group">
             <label>Parental Level of Education</label>
             <select name="parental_level_of_education" required>
-                <option disabled selected value="">Select Education</option>
-                <option value="associate's degree" {{ 'selected' if form_data and form_data.parental_level_of_education == "associate's degree" }}>Associate's degree</option>
-                <option value="bachelor's degree" {{ 'selected' if form_data and form_data.parental_level_of_education == "bachelor's degree" }}>Bachelor's degree</option>
-                <option value="high school" {{ 'selected' if form_data and form_data.parental_level_of_education == "high school" }}>High school</option>
-                <option value="master's degree" {{ 'selected' if form_data and form_data.parental_level_of_education == "master's degree" }}>Master's degree</option>
-                <option value="some college" {{ 'selected' if form_data and form_data.parental_level_of_education == "some college" }}>Some college</option>
-                <option value="some high school" {{ 'selected' if form_data and form_data.parental_level_of_education == "some high school" }}>Some high school</option>
+                <option disabled {{ '' if form_data else 'selected' }} value="">Select Education</option>
+                <option value="associate's degree" {{ 'selected' if form_data and form_data.parental_level_of_education == "associate's degree" else '' }}>Associate's degree</option>
+                <option value="bachelor's degree" {{ 'selected' if form_data and form_data.parental_level_of_education == "bachelor's degree" else '' }}>Bachelor's degree</option>
+                <option value="high school" {{ 'selected' if form_data and form_data.parental_level_of_education == "high school" else '' }}>High school</option>
+                <option value="master's degree" {{ 'selected' if form_data and form_data.parental_level_of_education == "master's degree" else '' }}>Master's degree</option>
+                <option value="some college" {{ 'selected' if form_data and form_data.parental_level_of_education == "some college" else '' }}>Some college</option>
+                <option value="some high school" {{ 'selected' if form_data and form_data.parental_level_of_education == "some high school" else '' }}>Some high school</option>
             </select>
         </div>
 
         <div class="form-group">
             <label>Lunch Type</label>
             <select name="lunch" required>
-                <option disabled selected value="">Select Lunch</option>
-                <option value="free/reduced" {{ 'selected' if form_data and form_data.lunch == 'free/reduced' }}>Free / Reduced</option>
-                <option value="standard" {{ 'selected' if form_data and form_data.lunch == 'standard' }}>Standard</option>
+                <option disabled {{ '' if form_data else 'selected' }} value="">Select Lunch</option>
+                <option value="free/reduced" {{ 'selected' if form_data and form_data.lunch == 'free/reduced' else '' }}>Free / Reduced</option>
+                <option value="standard" {{ 'selected' if form_data and form_data.lunch == 'standard' else '' }}>Standard</option>
             </select>
         </div>
 
         <div class="form-group full-width">
             <label>Test Preparation Course</label>
             <select name="test_preparation_course" required>
-                <option disabled selected value="">Select Course</option>
-                <option value="none" {{ 'selected' if form_data and form_data.test_preparation_course == 'none' }}>None</option>
-                <option value="completed" {{ 'selected' if form_data and form_data.test_preparation_course == 'completed' }}>Completed</option>
+                <option disabled {{ '' if form_data else 'selected' }} value="">Select Course</option>
+                <option value="none" {{ 'selected' if form_data and form_data.test_preparation_course == 'none' else '' }}>None</option>
+                <option value="completed" {{ 'selected' if form_data and form_data.test_preparation_course == 'completed' else '' }}>Completed</option>
             </select>
         </div>
 
@@ -216,16 +222,22 @@
         <div class="submit-btn">
             <input type="submit" value="Predict Maths Score">
         </div>
-
     </form>
 
+    <!-- Result Display -->
     {% if results %}
     <div class="result">
         Predicted Maths Score: <span>{{ results }}</span>
     </div>
     {% endif %}
 
-</div>
+    <!-- Error Display -->
+    {% if error %}
+    <div class="error">
+        {{ error }}
+    </div>
+    {% endif %}
 
+</div>
 </body>
 </html>
