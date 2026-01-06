@@ -1,1 +1,231 @@
-<h1>Welcome to the home page</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Performance Indicator</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f4c81, #c31432);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 850px;
+            border-radius: 16px;
+            padding: 40px 50px;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            color: #0f4c81;
+            font-weight: 700;
+        }
+
+        .header h1 span {
+            color: #c31432;
+        }
+
+        .header p {
+            margin-top: 8px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px 30px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #333;
+        }
+
+        .form-group select,
+        .form-group input {
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 1.5px solid #ccc;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group select:focus,
+        .form-group input:focus {
+            border-color: #0f4c81;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(15, 76, 129, 0.2);
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .submit-btn {
+            grid-column: span 2;
+            margin-top: 10px;
+        }
+
+        .submit-btn input {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #0f4c81, #c31432);
+            color: white;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .submit-btn input:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        .result {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: 700;
+            color: #0f4c81;
+        }
+
+        .result span {
+            color: #c31432;
+        }
+
+        @media (max-width: 768px) {
+            form {
+                grid-template-columns: 1fr;
+            }
+
+            .full-width,
+            .submit-btn {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>Student <span>Performance Indicator</span></h1>
+        <p>AI-driven insights for academic success</p>
+    </div>
+
+    <!-- FORM -->
+    <form method="post">
+
+        <div class="form-group">
+            <label>Gender</label>
+            <select name="gender" required>
+                <option disabled selected value="">Select Gender</option>
+                <option value="male" {{ 'selected' if form_data and form_data.gender == 'male' }}>Male</option>
+                <option value="female" {{ 'selected' if form_data and form_data.gender == 'female' }}>Female</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Race / Ethnicity</label>
+            <select name="race_ethnicity" required>
+                <option disabled selected value="">Select Ethnicity</option>
+                <option value="group A" {{ 'selected' if form_data and form_data.race_ethnicity == 'group A' }}>Group A</option>
+                <option value="group B" {{ 'selected' if form_data and form_data.race_ethnicity == 'group B' }}>Group B</option>
+                <option value="group C" {{ 'selected' if form_data and form_data.race_ethnicity == 'group C' }}>Group C</option>
+                <option value="group D" {{ 'selected' if form_data and form_data.race_ethnicity == 'group D' }}>Group D</option>
+                <option value="group E" {{ 'selected' if form_data and form_data.race_ethnicity == 'group E' }}>Group E</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Parental Level of Education</label>
+            <select name="parental_level_of_education" required>
+                <option disabled selected value="">Select Education</option>
+                <option value="associate's degree" {{ 'selected' if form_data and form_data.parental_level_of_education == "associate's degree" }}>Associate's degree</option>
+                <option value="bachelor's degree" {{ 'selected' if form_data and form_data.parental_level_of_education == "bachelor's degree" }}>Bachelor's degree</option>
+                <option value="high school" {{ 'selected' if form_data and form_data.parental_level_of_education == "high school" }}>High school</option>
+                <option value="master's degree" {{ 'selected' if form_data and form_data.parental_level_of_education == "master's degree" }}>Master's degree</option>
+                <option value="some college" {{ 'selected' if form_data and form_data.parental_level_of_education == "some college" }}>Some college</option>
+                <option value="some high school" {{ 'selected' if form_data and form_data.parental_level_of_education == "some high school" }}>Some high school</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Lunch Type</label>
+            <select name="lunch" required>
+                <option disabled selected value="">Select Lunch</option>
+                <option value="free/reduced" {{ 'selected' if form_data and form_data.lunch == 'free/reduced' }}>Free / Reduced</option>
+                <option value="standard" {{ 'selected' if form_data and form_data.lunch == 'standard' }}>Standard</option>
+            </select>
+        </div>
+
+        <div class="form-group full-width">
+            <label>Test Preparation Course</label>
+            <select name="test_preparation_course" required>
+                <option disabled selected value="">Select Course</option>
+                <option value="none" {{ 'selected' if form_data and form_data.test_preparation_course == 'none' }}>None</option>
+                <option value="completed" {{ 'selected' if form_data and form_data.test_preparation_course == 'completed' }}>Completed</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Reading Score (0–100)</label>
+            <input type="number" name="reading_score" min="0" max="100"
+                   value="{{ form_data.reading_score if form_data else '' }}" required>
+        </div>
+
+        <div class="form-group">
+            <label>Writing Score (0–100)</label>
+            <input type="number" name="writing_score" min="0" max="100"
+                   value="{{ form_data.writing_score if form_data else '' }}" required>
+        </div>
+
+        <div class="submit-btn">
+            <input type="submit" value="Predict Maths Score">
+        </div>
+
+    </form>
+
+    {% if results %}
+    <div class="result">
+        Predicted Maths Score: <span>{{ results }}</span>
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
