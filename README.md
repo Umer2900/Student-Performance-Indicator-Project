@@ -16,60 +16,56 @@ The project includes **Exploratory Data Analysis (EDA), model training, preproce
 
 ## 🚀 Features
 
-- 📊 Exploratory Data Analysis (EDA)
-- 🧠 Machine Learning model training
-- ⚙️ Data preprocessing using pipelines
-- 🌐 Flask web application for predictions
-- 🎨 Modern and user-friendly UI
-- 📦 Modular and scalable project structure
-- 🔐 Robust exception handling & logging
+- 📊 **Exploratory Data Analysis (EDA):** In-depth analysis of factors affecting student scores.
+- 🧠 **Machine Learning Training:** Comparison of multiple regression models to find the best fit.
+- ⚙️ **Data Preprocessing:** Robust automated pipelines for handling categorical and numerical data.
+- 🌐 **Flask Web App:** Interactive web interface for real-time score prediction.
+- 🎨 **Modern UI:** Clean and user-friendly design.
+- 📦 **Modular Structure:** Clean, scalable, and professional code organization.
+- 🔐 **Robust Error Handling:** Custom exception handling and detailed logging for debugging.
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### **Programming & ML**
-- Python
-- NumPy
-- Pandas
-- Scikit-learn
-- CatBoost
+- **Python**: Core programming language.
+- **NumPy & Pandas**: Data manipulation and cleaning.
+- **Scikit-learn**: Model training and preprocessing.
+- **CatBoost**: Advanced gradient boosting library.
 
 ### **Web Framework**
-- Flask
-- HTML5 / CSS3
+- **Flask**: Lightweight web framework for the backend.
+- **HTML5 / CSS3**: Frontend structure and styling.
 
 ### **Tools**
-- Jupyter Notebook
-- Git & GitHub
+- **Jupyter Notebook**: For experimentation and EDA.
+- **Git & GitHub**: Version control.
 
 ---
 
 ## 📁 Project Structure
 
+```text
 Student-Performance-Project/
-
-├── notebook/ # Jupyter notebooks
-│ ├── data/
-│ │ └── stud.csv # Dataset
-│ │
-│ ├── EDA.ipynb # Exploratory Data Analysis
-│ └── Model_Training.ipynb # Model training & evaluation
+├── notebook/                   # Jupyter notebooks
+│   ├── data/
+│   │   └── stud.csv            # Dataset
+│   ├── EDA.ipynb               # Exploratory Data Analysis
+│   └── Model_Training.ipynb    # Model training & evaluation
 │
-├── src/ # Source code
-│ ├── pipeline/
-│ │ └── predict_pipeline.py # Prediction pipeline
-│ │
-│ ├── utils.py # Utility functions
-│ ├── logger.py # Logging configuration
-│ └── exception.py # Custom exception handling
+├── src/                        # Source code
+│   ├── components/             # Data ingestion, transformation, model trainer
+│   ├── pipeline/               # Training & Prediction pipelines
+│   │   └── predict_pipeline.py 
+│   ├── utils.py                # Utility functions
+│   ├── logger.py               # Logging configuration
+│   └── exception.py            # Custom exception handling
 │
-├── templates/ # HTML templates
-│ └── index.html # Frontend UI
+├── templates/                  # HTML templates
+│   └── index.html              # Frontend UI
 │
-├── app.py # Flask application entry point
-├── requirements.txt # Python dependencies
-├── setup.py # Project setup file
-└──  README.md # Project documentation
-
-
+├── app.py                      # Flask application entry point
+├── requirements.txt            # Python dependencies
+├── setup.py                    # Project setup file
+└── README.md                   # Project documentation
