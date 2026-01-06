@@ -9,10 +9,7 @@ The system combines **data analysis, machine learning pipelines, and a FastAPI w
 
 ---
 
-[**Live Demo**](https://student-performance-indicator-project.onrender.com)
-
 - **Live Demo:** [Student Performance Indicator](https://student-performance-indicator-project.onrender.co)
-
 
 ---
 
