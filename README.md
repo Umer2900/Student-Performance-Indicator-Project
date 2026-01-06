@@ -8,7 +8,7 @@ A complete **end-to-end Machine Learning project** that predicts a student’s *
 
 ---
 
-- **Live Demo:** [Student Performance Indicator](https://student-performance-indicator-project.onrender.co)
+- **Live Demo:** [Student Performance Indicator](https://student-performance-indicator-project.onrender.com)
 
 ---
 
